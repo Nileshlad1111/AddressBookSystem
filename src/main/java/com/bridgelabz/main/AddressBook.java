@@ -1,26 +1,35 @@
 package com.bridgelabz.main;
 
+import com.bridgelabz.models.Contacts;
 import com.bridgelabz.utils.InputUtil;
 
 public class AddressBook {
     public static void main(String[] args) {
-        //variable
-        String firstName ,lastName , address , city , state ,zip , phone ;
 
-        //person detailed and class method call
-        System.out.println("Enter First Name");
-        firstName = InputUtil.getStringValue();
-        System.out.println("Enter Last Name");
-        lastName = InputUtil.getStringValue();
-        System.out.println("Enter Address");
-        address = InputUtil.getStringValue();
-        System.out.println("Enter City");
-        city = InputUtil.getStringValue();
-        System.out.println("Enter State");
-        state = InputUtil.getStringValue();
-        System.out.println("Enter Zip");
-        zip = InputUtil.getStringValue();
-        System.out.println("Enter phone number");
-        phone = InputUtil.getStringValue();
+        Contacts contacts = new Contacts();
+        int choice , i = 0;
+        while(i==0)
+        {
+            System.out.println("--- Address Book Management ---");
+            System.out.println("1: Add New Person ");
+            System.out.println("2: Display Records ");
+            System.out.println("3: Exit	");
+            System.out.println("--- Enter Your Choice ---");
+            choice = InputUtil.getIntValue();
+            switch(choice)
+            {
+                case 1 :
+                    contacts.addRecord();
+                    break;
+                case 2 :
+                    contacts.displayRecord();
+                    break;
+                case 3 :
+                    i = -1;
+                    break;
+                default :
+                    System.out.println("Please Enter Valid Option!!!");
+            }
+        }
     }
 }
