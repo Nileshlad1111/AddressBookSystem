@@ -59,14 +59,14 @@ public class Contacts {
         System.out.println(personList.get(id));
         while(i==0) {
             System.out.println("To edit contact details\n"
-                    + "\t1: First name"
-                    + "\t2:  Last name"
-                    + "\t1: Address\n"
-                    + "\t2: city\n"
-                    + "\t3: State\n"
-                    + "\t4: Phone\n"
-                    + "\t5: Zip Code\n"
-                    + "\t6. Save And Exit\n");
+                    + "\t1: First name\n"
+                    + "\t2: Last name\n"
+                    + "\t3: Address\n"
+                    + "\t4: city\n"
+                    + "\t5: State\n"
+                    + "\t6: Phone\n"
+                    + "\t7: Zip Code\n"
+                    + "\t8. Save And Exit\n");
             choice = InputUtil.getIntValue();
             switch (choice) {
                 case 1:
