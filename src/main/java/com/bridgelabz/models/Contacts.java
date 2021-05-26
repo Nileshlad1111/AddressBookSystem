@@ -70,7 +70,7 @@ public class Contacts {
             choice = InputUtil.getIntValue();
             switch (choice) {
                 case 1:
-                    System.out.print("Enter new Street : ");
+                    System.out.print("Enter new Address : ");
                     address = InputUtil.getStringValue();
                     personList.get(id).setAddress(address);
                     break;
@@ -113,6 +113,19 @@ public class Contacts {
             System.out.println(personList.get(id));
         }
     } //end of edit() method }
+
+    //	DELETE METHOD
+    public void deleteRecord()
+    {
+        int id;
+        for(Person p : personList)
+        {
+            System.out.println("ID: #"+personList.indexOf(p) + " : " + p);
+        }
+        System.out.print("\nEnter #ID to delete Contact : ");
+        id = InputUtil.getIntValue();
+        personList.remove(id);
+    }
  }
 
 
