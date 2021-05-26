@@ -35,17 +35,18 @@ public class Contacts {
     }
 
     //Display method
-    public void displayRecord()
-    {
-        for(Person p1: personList)
-        {
-            System.out.println(p1);
+    public void displayRecord() {
+        if (personList.isEmpty()) {
+            System.out.println("No recorders");
+        } else {
+            for (Person person : personList) {
+                System.out.println(person);
+            }
+
         }
-
     }
-
     // Edit method
-    public void editeRecord() {
+    public void editRecord() {
         int id,choice = 0, i=0;
         String firstName ,lastName , address , city , state ,zip , phone ;
 
@@ -114,7 +115,7 @@ public class Contacts {
         }
     } //end of edit() method }
 
-    //	DELETE METHOD
+    //Delete method
     public void deleteRecord()
     {
         int id;

@@ -27,7 +27,7 @@ public class AddressBook {
                     contacts.displayRecord();
                     break;
                 case 3 :
-                    contacts.editeRecord();
+                    contacts.editRecord();
                     break;
                 case 4:
                     contacts.deleteRecord();
