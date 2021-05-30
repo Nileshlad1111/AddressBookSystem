@@ -1,5 +1,7 @@
 package com.bridgelabz.models;
 
+import java.util.Comparator;
+
 public class Person {
     private String firstName, lastName, address, city, state, phone,zip;
 
@@ -68,6 +70,18 @@ public class Person {
     public void setZip(String zip) {
         this.zip = zip;
     }
+
+    // Sort By First Name
+    public static Comparator<Person> firstNameSorting = new Comparator<Person>() {
+        @Override
+        public int compare(Person p1, Person p2)
+        {
+            String firstName1 = p1.getFirstName();
+            String firstName2 = p2.getFirstName();
+            // ascending order
+            return firstName1.compareTo(firstName2);
+        }
+    };
 
     @Override
     public String toString() {

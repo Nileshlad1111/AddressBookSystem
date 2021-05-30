@@ -1,5 +1,6 @@
 package com.bridgelabz.models;
 
+import com.bridgelabz.service.Sort;
 import com.bridgelabz.utils.InputUtil;
 
 import java.util.ArrayList;
@@ -14,14 +15,14 @@ public class Contacts {
         int i=0;
         String firstName = null;
         final String lastName, address, city, state, phone,zip;
-        while(i==0) {
+        while(i == 0) {
             System.out.print("Enter First Name : ");
             firstName = InputUtil.getStringValue();
-            if (checkExists(firstName)) {
+            if (checkExists(firstName)) {//calling checkExits() method to check First name already exists or not
                 System.out.println("Person Name Already Exists!!\nPlease enter different name...");
             }
             else {
-                i=1;
+                i=1; //if not found exits from loop & continues for next step
             }
         }
         System.out.println("Enter Last Name");
@@ -133,8 +134,14 @@ public class Contacts {
         System.out.print("\nEnter #ID to delete Contact : ");
         id = InputUtil.getIntValue();
         personList.remove(id);
+    } //end of delete() method
+
+    public void sortRecords()
+    {
+        Sort.sortByName(personList);
     }
 
+    // This function will check for duplicate users
     public boolean checkExists(String firstName)
     {
         int flag = 0;
