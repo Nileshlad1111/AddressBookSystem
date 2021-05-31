@@ -1,10 +1,13 @@
 package com.bridgelabz.models;
 
+import com.bridgelabz.service.Search;
 import com.bridgelabz.service.Sort;
 import com.bridgelabz.utils.InputUtil;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 public class Contacts {
     //Goble store contact details
@@ -78,20 +81,21 @@ public class Contacts {
                     + "\t8. Save And Exit\n");
             choice = InputUtil.getIntValue();
             switch (choice) {
+
                 case 1:
-                    System.out.print("Enter new Address : ");
-                    address = InputUtil.getStringValue();
-                    personList.get(id).setAddress(address);
-                    break;
-                case 2:
                     System.out.print("Enter new firstName : ");
                     firstName = InputUtil.getStringValue();
                     personList.get(id).setCity(firstName);
                     break;
-                case 3:
+                case 2:
                     System.out.print("Enter new lastName : ");
                     lastName = InputUtil.getStringValue();
                     personList.get(id).setCity(lastName);
+                    break;
+                case 3:
+                    System.out.print("Enter new Address : ");
+                    address = InputUtil.getStringValue();
+                    personList.get(id).setAddress(address);
                     break;
                 case 4:
                     System.out.print("Enter new City : ");
@@ -165,7 +169,40 @@ public class Contacts {
                 System.out.println("Please Enter Valid Option...");
         }
     }
+   // This Method will View Person by City and State
+    public void viewByCityAndState()
+    {
+        Map<String ,String> cityDict = createCityDict();
+        Map<String ,String> stateDict = createStateDict();
+        final String city,state;
+        System.out.println("Enter City");
+        city=InputUtil.getStringValue();
+        System.out.println("Enter State");
+        state=InputUtil.getStringValue();
+        Search.searchByCityAndState(cityDict,stateDict,city,state);
+    } //End of viewByCityAndState() Method
 
+    //    Create City Dictionary
+    public Map<String,String> createCityDict()
+    {
+        Map<String,String> cityDict = new Hashtable<String ,String>();
+        for (Person person:personList)
+        {
+            cityDict.put(person.getFirstName(),person.getCity());
+        }
+        return cityDict;
+    }
+
+    //    Create State Dictionary
+    public Map<String,String> createStateDict()
+    {
+        Map<String,String> stateDict = new Hashtable<String ,String>();
+        for (Person person:personList)
+        {
+            stateDict.put(person.getFirstName(),person.getState());
+        }
+        return stateDict;
+    }
     // This function will check for duplicate users
     public boolean checkExists(String firstName)
     {
