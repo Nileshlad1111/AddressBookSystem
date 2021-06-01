@@ -85,12 +85,12 @@ public class Contacts {
                 case 1:
                     System.out.print("Enter new firstName : ");
                     firstName = InputUtil.getStringValue();
-                    personList.get(id).setCity(firstName);
+                    personList.get(id).setFirstName(firstName);
                     break;
                 case 2:
                     System.out.print("Enter new lastName : ");
                     lastName = InputUtil.getStringValue();
-                    personList.get(id).setCity(lastName);
+                    personList.get(id).setLastName(lastName);
                     break;
                 case 3:
                     System.out.print("Enter new Address : ");
@@ -108,7 +108,7 @@ public class Contacts {
                     personList.get(id).setState(state);
                     break;
                 case 6:
-                    System.out.print("Enter new Phone : ");
+                    System.out.print("Enter new Phone Number : ");
                     phone = InputUtil.getStringValue();
                     personList.get(id).setPhone(phone);
                     break;
