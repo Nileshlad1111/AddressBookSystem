@@ -18,6 +18,10 @@ public class Search {
         List<String> cityMatch = cityDict.entrySet().stream()
                 .filter(e -> city.equals(e.getValue())).map(Map.Entry::getKey).collect(Collectors.toList());
         System.out.println(cityMatch);
+
+        List<String> stateMatch = cityDict.entrySet().stream()
+                .filter(e -> state.equals(e.getValue())).map(Map.Entry::getKey).collect(Collectors.toList());
+        System.out.println(cityMatch);
     }
 
     //search by person city List contact
