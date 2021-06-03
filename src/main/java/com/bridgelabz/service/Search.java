@@ -19,9 +19,9 @@ public class Search {
                 .filter(e -> city.equals(e.getValue())).map(Map.Entry::getKey).collect(Collectors.toList());
         System.out.println(cityMatch);
 
-        List<String> stateMatch = cityDict.entrySet().stream()
+        List<String> stateMatch = stateDict.entrySet().stream()
                 .filter(e -> state.equals(e.getValue())).map(Map.Entry::getKey).collect(Collectors.toList());
-        System.out.println(cityMatch);
+        System.out.println(stateMatch);
     }
 
     //search by person city List contact
