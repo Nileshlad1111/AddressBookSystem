@@ -182,7 +182,7 @@ public class Contacts {
         Search.searchByCityAndState(cityDict,stateDict,city,state);
     } //End of viewByCityAndState() Method
 
-    //    Create City Dictionary
+    //    Create City map
     public Map<String,String> createCityDict()
     {
         Map<String,String> cityDict = new Hashtable<String ,String>();
@@ -193,7 +193,7 @@ public class Contacts {
         return cityDict;
     }
 
-    //    Create State Dictionary
+    //    Create State map
     public Map<String,String> createStateDict()
     {
         Map<String,String> stateDict = new Hashtable<String ,String>();

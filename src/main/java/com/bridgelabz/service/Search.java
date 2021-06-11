@@ -18,13 +18,9 @@ public class Search {
         List<String> cityMatch = cityDict.entrySet().stream()
                 .filter(e -> city.equals(e.getValue())).map(Map.Entry::getKey).collect(Collectors.toList());
         System.out.println(cityMatch);
-
-        List<String> stateMatch = stateDict.entrySet().stream()
-                .filter(e -> state.equals(e.getValue())).map(Map.Entry::getKey).collect(Collectors.toList());
-        System.out.println(stateMatch);
     }
 
-    //search by person city List contact
+   /* //search by person city List contact
     public static void searchByCity(List<Person> person)
     {
         String search = null;
@@ -83,5 +79,5 @@ public class Search {
         {
             System.out.println("Match Not Found!!!");
         }
-    }
+    }*/
 }
