@@ -12,6 +12,7 @@ import java.util.Map;
 public class Contacts {
     //Goble store contact details
     List<Person> personList = new ArrayList<Person>();
+
     //	ADD METHOD
     public void addRecord()
     {
@@ -140,6 +141,7 @@ public class Contacts {
         personList.remove(id);
     } //end of delete() method
 
+    //sort method
     public void sortRecords()
     {
         System.out.println("Sort By...\n"
@@ -193,7 +195,7 @@ public class Contacts {
         return cityDict;
     }
 
-    //    Create State map
+    //Create State map
     public Map<String,String> createStateDict()
     {
         Map<String,String> stateDict = new Hashtable<String ,String>();
@@ -203,6 +205,7 @@ public class Contacts {
         }
         return stateDict;
     }
+
     // This function will check for duplicate users
     public boolean checkExists(String firstName)
     {
