@@ -11,13 +11,13 @@ public class AddressBook {
         while (i == 0) {
             System.out.println("--- Address Book Management ---\n");
             System.out.println("\t--MENU--");
-            System.out.println("1: Add New Person ");
-            System.out.println("2: Display Records ");
-            System.out.println("3: Edit Person ");
-            System.out.println("4: Delete Person ");
-            System.out.println("5: Sort ");
-            System.out.println("6: Search ");
-            System.out.println("7: Exit \n");
+            System.out.println("1: Add New Person      ");
+            System.out.println("2: Display Records     ");
+            System.out.println("3: Edit Person     ");
+            System.out.println("4: Delete Person     ");
+            System.out.println("5: Sort     ");
+            System.out.println("6: Search     ");
+            System.out.println("7: Exit		       \n");
             System.out.println("--- Enter Your Choice ---");
             int choice = InputUtil.getIntValue();
             switch (choice) {

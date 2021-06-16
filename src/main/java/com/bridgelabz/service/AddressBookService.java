@@ -3,14 +3,11 @@ package com.bridgelabz.service;
 import com.bridgelabz.exception.AddressBookException;
 import com.bridgelabz.models.Person;
 import com.bridgelabz.utils.InputUtil;
-import com.bridgelabz.utils.WriteToCSV;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/*Helper Class to Perform AddressBook Operations
- * Add, Display, Edit, Delete, Search, Sort
- */
+/* Add, Display, Edit, Delete, Search, Sort */
 public class AddressBookService implements IAddressBookService {
     List<Person> personList = new ArrayList<>();
 
@@ -125,8 +122,6 @@ public class AddressBookService implements IAddressBookService {
 
         personList.add(new Person(firstName, lastName, address, city, state, phone, zip));
 
-        //this.writeToJSONFile(person);
-        WriteToCSV.writeAddCSV(personList);
     }
 
     /*Method to Display Person Records*/
@@ -190,9 +185,6 @@ public class AddressBookService implements IAddressBookService {
                             personList.get(id).setZip(zip);
                             break;
                         case 6:
-                            WriteToCSV.writeFromEdit(personList);
-                            break;
-                        case 7:
                             i = 1;
                             break;
                         default:
@@ -217,7 +209,6 @@ public class AddressBookService implements IAddressBookService {
                 System.out.print("\nEnter #ID to delete Contact : ");
                 id = InputUtil.getIntValue();
                 personList.remove(id);
-                WriteToCSV.writeFromDelete(personList);
 
             }
         } catch (IndexOutOfBoundsException e) {
