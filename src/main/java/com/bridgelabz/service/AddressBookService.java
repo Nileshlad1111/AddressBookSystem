@@ -3,6 +3,7 @@ package com.bridgelabz.service;
 import com.bridgelabz.exception.AddressBookException;
 import com.bridgelabz.models.Person;
 import com.bridgelabz.utils.InputUtil;
+import com.bridgelabz.utils.WriteToCSV;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,6 +124,9 @@ public class AddressBookService implements IAddressBookService {
         state = InputUtil.getStringValue();
 
         personList.add(new Person(firstName, lastName, address, city, state, phone, zip));
+
+        //this.writeToJSONFile(person);
+        WriteToCSV.writeAddCSV(personList);
     }
 
     /*Method to Display Person Records*/
@@ -156,7 +160,8 @@ public class AddressBookService implements IAddressBookService {
                             + "\t3: State\n"
                             + "\t4: Phone\n"
                             + "\t5: Zip Code\n"
-                            + "\t6. Save And Exit\n");
+                            +"\t6: write form edit data"
+                            + "\t7. Save And Exit\n");
                     int choice = InputUtil.getIntValue();
                     switch (choice) {
                         case 1:
@@ -185,6 +190,9 @@ public class AddressBookService implements IAddressBookService {
                             personList.get(id).setZip(zip);
                             break;
                         case 6:
+                            WriteToCSV.writeFromEdit(personList);
+                            break;
+                        case 7:
                             i = 1;
                             break;
                         default:
@@ -209,6 +217,8 @@ public class AddressBookService implements IAddressBookService {
                 System.out.print("\nEnter #ID to delete Contact : ");
                 id = InputUtil.getIntValue();
                 personList.remove(id);
+                WriteToCSV.writeFromDelete(personList);
+
             }
         } catch (IndexOutOfBoundsException e) {
             throw new AddressBookException("Entered Wrong #ID", AddressBookException.exceptionType.ENTERED_WRONG_ID);

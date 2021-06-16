@@ -47,8 +47,17 @@ public class Person {
     }
 
     /*Getter & Setter Methods*/
+
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public void setAddress(String address) {
@@ -71,6 +80,10 @@ public class Person {
         this.state = state;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -86,13 +99,13 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "First Name ='" + firstName + '\'' +
-                ", Last Name ='" + lastName + '\'' +
-                ", Address ='" + address + '\'' +
-                ", City ='" + city + '\'' +
-                ", State ='" + state + '\'' +
-                ", Phone ='" + phone + '\'' +
-                ", Zip ='" + zip + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", phone='" + phone + '\'' +
+                ", zip='" + zip + '\'' +
                 '}';
     }
 }
