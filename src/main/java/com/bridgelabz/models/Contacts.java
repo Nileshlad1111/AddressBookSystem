@@ -16,7 +16,7 @@ public class Contacts {
     //	ADD METHOD
     public void addRecord()
     {
-        int i=0;
+        int i = 0;
         String firstName = null;
         final String lastName, address, city, state, phone,zip;
         while(i == 0) {
@@ -26,7 +26,7 @@ public class Contacts {
                 System.out.println("Person Name Already Exists!!\nPlease enter different name...");
             }
             else {
-                i=1; //if not found exits from loop & continues for next step
+                i = 1; //if not found exits from loop & continues for next step
             }
         }
         System.out.println("Enter Last Name");
@@ -126,7 +126,7 @@ public class Contacts {
             }
             System.out.println(personList.get(id));
         }
-    } //end of edit() method }
+    }
 
     //Delete method
     public void deleteRecord()
@@ -184,7 +184,7 @@ public class Contacts {
         Search.searchByCityAndState(cityDict,stateDict,city,state);
     } //End of viewByCityAndState() Method
 
-    //    Create City map
+    // Create City map
     public Map<String,String> createCityDict()
     {
         Map<String,String> cityDict = new Hashtable<String ,String>();
